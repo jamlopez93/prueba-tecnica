@@ -11,18 +11,16 @@ type Params = {
 export default async function singlePost({ params: { postId } }: Params) {
   const postData: Promise<Post> = getPost(postId);
   const postCommentsData: Promise<Comment[]> = getPostComments(postId);
- // const [post, postComments] = await Promise.all([postData, postCommentsData]);
   const post = await postData;
   return (
     <>
-    <h2>
-        {post.title}
-        <Suspense fallback={
-            <p>Cargando...</p>
-            }>
+      <div>
+        <h3>{post.title} </h3>
+        <p>{post.body}</p>
+      </div>
+      <Suspense fallback={<p>Cargando...</p>}>
         <PostsComments promise={postCommentsData} />
-        </Suspense>
-    </h2>
+      </Suspense>
     </>
-  )
+  );
 }
