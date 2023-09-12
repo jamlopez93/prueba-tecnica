@@ -11,10 +11,10 @@ export default async function PostsComments({ promise }: Props) {
   const postComments = await promise;
   const content = postComments.map((comment) => {
     return (
-      <article key={comment.id}>
-        <h4>{comment.email}</h4>
-        <p>{comment.body}</p>
-      </article>
+      <div className="g-gray-100 rounded-card bg-light-grey rounded-lg border-mid-grey shadow-lg border p-5 my-4" key={comment.id}>
+        <h4 className="mb-1">{comment.email}</h4>
+        <p className="my-2">{comment.body}</p>
+      </div>
     );
   });
   return content;
