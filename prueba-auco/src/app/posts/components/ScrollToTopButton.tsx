@@ -37,13 +37,13 @@ function ScrollToTopButton() {
 
   return (
     <motion.button
-      className="fixed bottom-10 right-5 p-10"
+      className=" fixed lg:bottom-10 bottom-20 lg:right-5 p-10"
       variants={ScrollToTopContainerVariants}
       initial="hide"
       animate={controls}
       onClick={scrollToTop}
     >
-      <FaArrowUp />
+      <FaArrowUp  />
     </motion.button>
   );
 }

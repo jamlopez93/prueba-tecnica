@@ -10,19 +10,21 @@ export default async function postPage() {
   const postsData: Promise<Post[]> = getAllPosts();
   const posts = await postsData;
   const content = (
-    <section className="max-w-screen-lg mx-auto p-4">
+    <section className="max-w-screen-lg mx-auto pb-20 px-20 pt-10">
+      <h2 className="text-4xl font-bold text-[#041840] text-center mb-10 mt-7" >Entradas de blog</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {posts.map((post: Post) => {
           return (
+            
             <Suspense fallback={<p>Cargando...</p>}>
               <Link
                 href={`/posts/${post.id}`}
-                className="bg-gray-100 rounded-card bg-light-grey rounded-lg border-mid-grey shadow-lg border p-5 "
+                className="bg-white rounded-card bg-light-grey rounded-lg border-mid-grey shadow-lg border p-5 "
               >
-                <div>
+                <article>
                   <h3 key={post.id}>{post.title}</h3>
                   <p>{post.body.split(" ").slice(0, 5).join(" ")}...</p>
-                </div>
+                </article>
               </Link>
             </Suspense>
           );

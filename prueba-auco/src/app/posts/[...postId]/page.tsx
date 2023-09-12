@@ -22,7 +22,7 @@ export default async function singlePost({ params: { postId } }: Params) {
   return (
     <AnimatePresence mode="wait">
       <motion.div>
-        <article className="max-w-2xl mx-auto p-6">
+        <article className="max-w-2xl mx-auto p-6 pb-20">
           <div>
             <h3 className="my-4 text-center text-2xl font-bold text-[#041840]   lg:text-4xl">
               {post.title}{" "}

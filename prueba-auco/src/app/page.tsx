@@ -2,25 +2,25 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-
 export default function Home() {
   return (
     <AnimatePresence mode="wait">
       <motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="h-screen flex items-center justify-center p-0 m-0 overflow-hidden"
+        <Link
+          className=" cursor-pointer  font-mono self-center text-4xl font-semibold whitespace-nowrap text-[#041840] "
+          href="/posts"
         >
-          <Link
-            className=" cursor-pointer  font-mono self-center text-4xl font-semibold whitespace-nowrap text-[#041840] "
-            href="/posts"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="h-screen flex items-center flex-col justify-center  overflow-hidden"
           >
-            Bienvenidos 
-          </Link>
-          
-        </motion.div>
+            <h1>Bienvenidos</h1>
+
+            <p className="mx-20">A mi prueba técnica</p>
+          </motion.div>
+        </Link>
         <motion.div
           className="slide-in"
           initial={{ scaleY: 0 }}

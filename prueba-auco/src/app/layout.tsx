@@ -2,6 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import logo from "/public/logo.png";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,55 +20,53 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header>
+        <header className="sticky top-0">
           <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
             <div className="flex flex-wrap justify-start  items-center mx-auto max-w-screen-xl">
-              <div className="flex items-center lg:order-2">
-                <Link
-                  href="/"
-                  className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/posts"
-                  className="text-gray-800 bg-primary-700 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
-                >
-                  Posts
-                </Link>
+              <div className="flex items-center lg:order-2 lg:w-full justify-between w-full">
                 <Link
                   href="/about"
-                  className="text-gray-800 bg-primary-700 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                  className="text-gray-800 dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
                 >
-                  Acerca de mí
+                  <Image src={logo} alt=""></Image>
                 </Link>
+                <div>
+                  <Link
+                    href="/posts"
+                    className="text-gray-800 bg-primary-700 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                  >
+                    Posts
+                  </Link>
+                </div>
               </div>
               <div
                 className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
                 id="mobile-menu-2"
-              >
-
-              </div>
+              ></div>
             </div>
           </nav>
         </header>
-        <main className="pt-20 pb-20 bg-gray-50 min-h-screen">{children}</main>
-        <footer className="p-0.5 bg-white sm:p-6  fixed bottom-0 w-full">
+        <main className=" bg-gray-50 min-h-screen">
+          {children}
+        </main>
+        <footer className=" bg-white  fixed bottom-0 w-full">
           <div>
-            <div className="sm:flex sm:items-center sm:justify-between">
-              <span className="text-sm text-gray-500 sm:text-center ">
-                © 2023{" "}
-                <a
-                  target="_blank"
-                  href="https://mauriciolopez.me/"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-gray-900 hover:text-gray-500"
-                >
-                  Mauricio López
-                </a>
-                . Todos los derechos reservados.
-              </span>
-              <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+            <div className="flex flex-row gap-1 items-center justify-between p-2">
+              <div>
+                <span className="text-sm text-gray-500 sm:text-center ">
+                  © 2023{" "}
+                  <a
+                    target="_blank"
+                    href="https://mauriciolopez.me/"
+                    rel="noopener noreferrer"
+                    className="hover:underline text-gray-900 hover:text-gray-500"
+                  >
+                    Mauricio López
+                  </a>
+                  . Todos los derechos reservados.
+                </span>
+              </div>
+              <div className="flex  space-x-6 sm:justify-center ">
                 <a
                   href="https://github.com/jamlopez93"
                   rel="noopener noreferrer"

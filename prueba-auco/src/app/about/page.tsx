@@ -8,7 +8,7 @@ export default function page() {
   return (
     <AnimatePresence mode="wait">
       <motion.div>
-        <section>
+        <section className="py-20">
           <div className="flex flex-col items-center justify-center min-h-screen">
             <Image
               placeholder="blur"
@@ -58,7 +58,7 @@ export default function page() {
                 para mejorar mi bienestar físico, ya sea yendo al gimnasio o
                 haciendo cardio en casa.
               </p>
-              <p className="mt-5 mb-10 ">
+              <p className="mt-5 mb-10 pb-10 ">
                 Tengo habilidades para trabajar en equipo y analizar problemas
                 de manera crítica. Esto lo valoro profundamente y creo que es
                 uno de mis mayores atributos. Colaborar con colegas para
