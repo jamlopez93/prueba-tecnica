@@ -4,6 +4,7 @@ import getPost from "../../../../lib/getPost";
 import getPostComments from "../../../../lib/getPostComments";
 import { Suspense } from "react";
 import PostsComments from "./components/PostsComments";
+import Link from "next/link";
 type Params = {
   params: {
     postId: string;
@@ -32,7 +33,9 @@ export default async function singlePost({ params: { postId } }: Params) {
           <Suspense fallback={<p>Cargando...</p>}>
             <PostsComments promise={postCommentsData} />
           </Suspense>
+        <Link href="/posts"> <button className="text-white cursor-pointer hover:bg-blue-900 transition-colors g-gray-100 rounded-card bg-light-grey rounded-lg border-mid-grey shadow-lg border p-5 my-4">Volver</button></Link> 
         </article>
+
         <motion.div
           className="slide-in"
           initial={{ scaleY: 0 }}

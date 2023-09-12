@@ -19,10 +19,10 @@ export default async function postPage() {
             <Suspense fallback={<p>Cargando...</p>}>
               <Link
                 href={`/posts/${post.id}`}
-                className="bg-white rounded-card bg-light-grey rounded-lg border-mid-grey shadow-lg border p-5 "
+                className="rounded-card bg-light-grey rounded-lg border-mid-grey shadow-lg border p-5 "
               >
                 <article>
-                  <h3 key={post.id}>{post.title}</h3>
+                  <h3 className="font-bold text-[#041840]" key={post.id}>{post.title}</h3>
                   <p>{post.body.split(" ").slice(0, 5).join(" ")}...</p>
                 </article>
               </Link>
@@ -30,6 +30,7 @@ export default async function postPage() {
           );
         })}
       </div>
+      
     </section>
   );
   return (

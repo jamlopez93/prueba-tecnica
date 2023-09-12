@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import me from "/public/me.jpg";
-import YouTube from "react-youtube";
+import React from "react";
 
 export default function page() {
   return (
@@ -69,6 +69,16 @@ export default function page() {
                 me convierten en un profesional versátil y comprometido.
               </p>
             </div>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/6gO7z1Cp93s?si=ImsE6dcLDqiR073K"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-9/12 lg:w-1/3"
+            ></iframe>
           </div>
         </section>
         <motion.div

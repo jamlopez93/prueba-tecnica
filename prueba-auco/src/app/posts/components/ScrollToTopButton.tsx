@@ -37,7 +37,7 @@ function ScrollToTopButton() {
 
   return (
     <motion.button
-      className=" fixed lg:bottom-10 bottom-20 lg:right-5 p-10"
+      className=" fixed lg:bottom-10 bottom-20 lg:right-5 p-10 bg-gray-50"
       variants={ScrollToTopContainerVariants}
       initial="hide"
       animate={controls}
