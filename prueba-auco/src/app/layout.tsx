@@ -6,7 +6,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Auco | Prueba técnica",
+  title: "AUCO | Prueba técnica",
   description: "Prueba tecnica para Auco creada en Next.js",
 };
 
@@ -19,26 +19,33 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <header>
-          <nav className="fixed top-0 z-30   h-16 w-full items-center border-2 border-solid bg-white px-7  py-2 ">
-            <div className="flex flex-wrap justify-between items-center">
-              <Link href="/" className="flex items-center">
-                <p className="font-mono self-center text-xl font-semibold whitespace-nowrap text-[#041840] ">
-                  Prueba técnica
-                </p>
-              </Link>
-              <div className=" lg:order-2">
+          <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+            <div className="flex flex-wrap justify-start  items-center mx-auto max-w-screen-xl">
+              <div className="flex items-center lg:order-2">
+                <Link
+                  href="/"
+                  className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+                >
+                  Home
+                </Link>
                 <Link
                   href="/posts"
-                  className="text-gray-800  hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none "
+                  className="text-gray-800 bg-primary-700 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                 >
                   Posts
                 </Link>
                 <Link
                   href="/about"
-                  className="text-gray-800  hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none d"
+                  className="text-gray-800 bg-primary-700 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                 >
                   Acerca de mí
                 </Link>
+              </div>
+              <div
+                className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+                id="mobile-menu-2"
+              >
+
               </div>
             </div>
           </nav>
@@ -93,7 +100,6 @@ export default function RootLayout({
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
-
                   >
                     <path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zM8.951 9.404H6.165V17.5H8.95V9.404zm6.841-.192c-1.324 0-1.993.629-2.385 1.156l-.127.181V9.403h-2.786l.01.484c.006.636.007 1.748.005 2.93l-.015 4.683h2.786v-4.522c0-.242.018-.484.092-.657.202-.483.66-.984 1.43-.984.955 0 1.367.666 1.408 1.662l.003.168V17.5H19v-4.643c0-2.487-1.375-3.645-3.208-3.645zM7.576 5.5C6.623 5.5 6 6.105 6 6.899c0 .73.536 1.325 1.378 1.392l.18.006c.971 0 1.577-.621 1.577-1.398C9.116 6.105 8.53 5.5 7.576 5.5z" />
                   </svg>

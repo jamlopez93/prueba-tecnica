@@ -1,66 +1,91 @@
+"use client";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import me from "/public/me.jpg";
+import YouTube from "react-youtube";
 
 export default function page() {
   return (
-    <section>
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <Image
-          placeholder="blur"
-          src={me}
-          alt="Imagen del autor"
-          height={500}
-          width={500}
-          className="rounded-md"
-        />
-        <h1 className="text-4xl font-bold text-[#041840] mt-5">
-          Mauricio López
-        </h1>
-        <p className=" text-gray-500 text-base">Desarrollador Frontend</p>
-        <h2 className="text-xl my-5">Acerca de mí</h2>
-        <div className="max-w-screen-lg mx-auto p-4">
-          <p className="my-5">
-            Soy una persona apasionada por el aprendizaje y la exploración
-            constante. Mi interés innato por adquirir nuevos conocimientos y
-            profundizar en lo que me apasiona me ha llevado a seguir una carrera
-            como desarrollador tecnológico. Desde que era pequeño, he tenido una
-            fascinación por crear cosas, y esta pasión me ha impulsado a
-            dedicarme al mundo de la tecnología, donde tengo la oportunidad de
-            convertir mis ideas en soluciones concretas.{" "}
-          </p>
-          <p className="my-5">
-            Una de las cosas que más valoro de mi trabajo es la oportunidad
-            constante de aprender y crecer. La tecnología es un campo en
-            constante evolución, y estar al día con las últimas tendencias y
-            herramientas es fundamental para ofrecer soluciones efectivas. Me
-            siento motivado por el desafío de resolver problemas de manera
-            creativa y encontrar las soluciones más eficientes.
-          </p>
-          <p className="my-5">
-            Cuando no estoy inmerso en el mundo de la tecnología, disfruto de
-            actividades que alimentan mi creatividad y bienestar. Pintar
-            miniaturas es una de mis pasiones, donde puedo dar rienda suelta a
-            mi imaginación y trabajar en proyectos artísticos. Además, soy un
-            apasionado del fitness y dedico tiempo a mi bienestar físico en el
-            gimnasio.
-          </p>
-          <p className="my-5">
-            Mi habilidad para trabajar en equipo y analizar problemas de manera
-            crítica es algo que valoro profundamente. Me encanta colaborar con
-            colegas para abordar desafíos complejos y encontrar soluciones
-            efectivas que beneficien a todos. Creo que la combinación de mi amor
-            por el aprendizaje constante, mi pasión por la tecnología y mis
-            habilidades de trabajo en equipo me convierten en un profesional
-            versátil y comprometido.
-          </p>
-          <p className="my-5">
-            En resumen, soy una persona curiosa y apasionada que disfruta de la
-            tecnología, la creatividad y el trabajo en equipo. Siempre estoy
-            dispuesto a asumir nuevos desafíos y seguir aprendiendo para crecer
-            tanto personal como profesionalmente.
-          </p>
-        </div>
-      </div>
-    </section>
+    <AnimatePresence mode="wait">
+      <motion.div>
+        <section>
+          <div className="flex flex-col items-center justify-center min-h-screen">
+            <Image
+              placeholder="blur"
+              src={me}
+              alt="Imagen del autor"
+              height={500}
+              width={500}
+              className="rounded-md w-9/12 lg:w-1/3"
+            />
+            <div className="max-w-screen-lg mx-auto my-10">
+              <h1 className="text-4xl font-bold text-[#041840] text-center">
+                Mauricio López
+              </h1>
+              <p className=" text-gray-500 text-base text-center italic font-light">
+                Desarrollador Frontend
+              </p>
+              <h2 className="text-xl mt-5 text-center ">Acerca de mí</h2>
+            </div>
+            <div className="lg:max-w-screen-lg mx-auto w-9/12">
+              <p className="mb-5">
+                Hola, soy Mauricio, un entusiasta del aprendizaje y de la
+                creación, me gusta mucho aprender nuevas cosas cada día y
+                profundizar en lo que me apasiona. Me ha llevado por este camino
+                del desarrollo tecnológico. Desde pequeño he tenido una fijación
+                por crear cosas, sea el formato que sea, y esta pasión me ha
+                impulsado a dedicarme al mundo de la tecnología, donde puedo
+                convertir nuevas ideas en soluciones concretas a problemas que
+                van surgiendo.
+              </p>
+              <p className="my-5">
+                Una de mis mayores motivaciones en este campo es la oportunidad
+                de aprender y crecer constantemente. El mundo del desarrollo es
+                uno que te obliga a estar en constante evolución para no
+                quedarte atrás, siempre hay nuevos caminos a diferentes
+                problemas o te da la oportunidad de revisitar viejos caminos y
+                mejorarlos. Esto es algo de lo que más valoro en mi trabajo y
+                que deseo seguir incursionando con la oportunidad que me brinda
+                Auco, donde espero poder seguir creciendo y aprender de los
+                demás compañeros.
+              </p>
+              <p className="my-5">
+                Cuando no estoy trabajando en el mundo de la tecnología, me
+                gusta mucho pintar modelos a escala. Principalmente, disfruto
+                mucho de pintar miniaturas para diferentes juegos de mesa. Es
+                una actividad que me permite crear de una manera más analógica y
+                me ayuda a despejar la mente. Además, dedico parte de cada día
+                para mejorar mi bienestar físico, ya sea yendo al gimnasio o
+                haciendo cardio en casa.
+              </p>
+              <p className="mt-5 mb-10 ">
+                Tengo habilidades para trabajar en equipo y analizar problemas
+                de manera crítica. Esto lo valoro profundamente y creo que es
+                uno de mis mayores atributos. Colaborar con colegas para
+                implementar soluciones efectivas que beneficien el bien común o
+                la meta final es algo que me mueve bastante y me motiva a seguir
+                creciendo y aprendiendo. La combinación de estas habilidades,
+                junto con mi facilidad para desempeñarme en campos tecnológicos,
+                me convierten en un profesional versátil y comprometido.
+              </p>
+            </div>
+          </div>
+        </section>
+        <motion.div
+          className="slide-in"
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 0 }}
+          exit={{ scaleY: 1 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        ></motion.div>
+        <motion.div
+          className="slide-out"
+          initial={{ scaleY: 1 }}
+          animate={{ scaleY: 0 }}
+          exit={{ scaleY: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        ></motion.div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
